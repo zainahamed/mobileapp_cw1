@@ -24,19 +24,7 @@ class DeleteConfirmationBottomSheet extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ElevatedButton(
-                onPressed: () async {
-                  // Perform the delete action
-                  onDelete();
-
-                  // Close the bottom sheet
-                  Navigator.pop(context);
-
-                  // Navigate to the HomeScreen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
-                  );
-                },
+                onPressed: onDelete,
                 style: ElevatedButton.styleFrom(
                   primary: Colors.red,
                 ),
