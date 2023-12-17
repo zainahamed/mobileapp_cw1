@@ -110,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _showAddBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
+      isScrollControlled: true,
       builder: (context) {
         return SingleChildScrollView(
           child: Container(
@@ -119,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ContactForm(
               onSubmit: (contact) async {
                 await handler.insertContact(contact.toMap());
-                // setState(() {});
+                setState(() {});
                 Navigator.pop(context); // Close the bottom sheet
               },
             ),
@@ -132,6 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _showUpdateBottomSheet(BuildContext context, Contact contact) {
     showModalBottomSheet(
       context: context,
+      isScrollControlled: true,
       builder: (context) {
         return ContactForm(
           onSubmit: (updatedContact) async {

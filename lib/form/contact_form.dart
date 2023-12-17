@@ -58,7 +58,7 @@ class _ContactFormState extends State<ContactForm> {
                 email: _emailController.text,
               );
               widget.onSubmit(contact);
-              Navigator.pop(context); // Close the bottom sheet
+              // Navigator.pop(context); // Close the bottom sheet
             },
             child: Text(widget.initialContact != null ? 'Update' : 'Add'),
           ),
